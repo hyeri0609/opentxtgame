@@ -26,6 +26,12 @@ var btnPos = document.getElementById('ButtonWindow');
 			btnPos.insertAdjacentHTML('beforeend', '<button id="PickButton'+i+'" onClick="pickItem(' + i + ')">pick ' + Items[i].title + '</button>');
 		}
 	}
+	btnPos.insertAdjacentHTML('beforeend', '<button id="ViewInventory" onClick="showInventory('+room.name+')">view inventory</button>');
+}
+
+function showInventory(previousRoom) {
+	var a = window[previousRoom];
+	console.log(a.description);
 }
 
 //draw footer text
@@ -132,6 +138,13 @@ var DefeatRoom= {
 	btnFnc: ['']
 };
 
+var Inventory = {
+	name: "Inventory",
+	title: "Inventory",
+	description: "Inventory",
+	btnTxt: ["Finish the Game"],
+	btnFnc: ['']
+}
 makeRoom(Title);
 
 /* 
